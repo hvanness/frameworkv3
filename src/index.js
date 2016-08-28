@@ -7,8 +7,8 @@ import useScroll from 'react-router-scroll/lib/useScroll';
 import routes from './routes'
 import createStore from './redux/create'
 
-import './res/css/global/normalize.css'
-import './res/css/global/skeleton.css'
+import './res/css/normalize.css'
+import './res/css/skeleton.css'
 
 let store = createStore()
 
