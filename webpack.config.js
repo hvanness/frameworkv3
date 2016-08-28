@@ -2,6 +2,7 @@ var debug = process.env.NODE_ENV !== "production"
 var webpack = require('webpack')
 var path = require('path')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var autoprefixer = require('autoprefixer');
 
 
 
@@ -57,9 +58,7 @@ module.exports = {
     ]
   },
 
-  postcss: [
-    require('autoprefixer')
-  ],
+  postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],
 
   plugins: debug
     ? [
