@@ -60,6 +60,13 @@ module.exports = {
 
   postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],
 
+
+  resolve = {
+    extensions: ['', '.js'],
+    modulesDirectories: ['node_modules'],
+    root: path.resolve('./src')
+  };
+
   plugins: debug
     ? [
       new webpack.HotModuleReplacementPlugin(),
