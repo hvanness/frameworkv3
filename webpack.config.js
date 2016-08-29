@@ -61,11 +61,11 @@ module.exports = {
   postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],
 
 
-  resolve = {
+  resolve: {
     extensions: ['', '.js'],
     modulesDirectories: ['node_modules'],
     root: path.resolve('./src')
-  };
+  },
 
   plugins: debug
     ? [
