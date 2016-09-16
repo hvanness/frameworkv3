@@ -27,6 +27,12 @@ module.exports = {
   devtool: debug ? 'cheap-module-eval-source-map' : 'cheap-module-source-map',
 
   module: {
+    preLoaders: [
+      {
+        test: /\.js$/,
+        loaders: ['eslint'],
+      }
+    ],
     loaders: [
       {
         test: /\.js?$/,
