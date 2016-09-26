@@ -49,7 +49,7 @@ module.exports = {
       [
         {// global
           test: /\.css$/,
-          exclude: path.join(__dirname, 'src/containers'),
+          include: path.join(__dirname, 'src/res/css/global'),
           loader: debug ? 'style-loader!css-loader!postcss-loader' : ExtractTextPlugin.extract('style-loader','css-loader!postcss-loader')
         },
         {// else local
