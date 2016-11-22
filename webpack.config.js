@@ -24,7 +24,7 @@ module.exports = {
     publicPath: '/static/'
   },
 
-  devtool: debug ? 'cheap-module-eval-source-map' : 'cheap-module-source-map',
+  devtool: 'source-map',
 
   module: {
     preLoaders: [
@@ -43,23 +43,21 @@ module.exports = {
         test: /\.(woff(2)?|png|jpg|gif)(\?[a-z0-9=\.]+)?$/,
         loader: 'url-loader',
         query: {
-          limit: '100000'
+          limit: '10000'
         }
       },
-      [
-        {// global
-          test: /\.css$/,
-          include: path.join(__dirname, 'src/res/css/global'),
-          loader: debug ? 'style-loader!css-loader!postcss-loader' : ExtractTextPlugin.extract('style-loader','css-loader!postcss-loader')
-        },
-        {// else local
-          test: /\.css$/,
-          loader: debug ? 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader' : ExtractTextPlugin.extract('style-loader','css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader')
-        },
-      ],
       {
         test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: 'file-loader'
+      },
+      {
+        test: /\.css$/,
+        loaders: (debug ? x=>x : x=>ExtractTextPlugin.extract.apply(x))([
+            'style-loader',
+            'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+            'postcss-loader'
+          ]
+        )
       }
     ]
   },
