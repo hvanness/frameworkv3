@@ -16,8 +16,8 @@ Install
 3. Delete examples:
  - `/src/example/`
  - `/src/example2/`
- - */src/routes.js*: `/* examples */ ... /* end examples */`
- - */src/reducer.js*: `/* examples */ ... /* end examples */`
+ - __*/src/routes.js*__: `/* examples */ ... /* end examples */`
+ - __*/src/reducer.js*__: `/* examples */ ... /* end examples */`
 
 
 Develop
@@ -29,7 +29,7 @@ Develop
 2. Load in browser:
  `http://localhost:3000`
 
-3. Edit sources in */src*
+3. Edit sources in __*/src*__
 
 
 Production Build
@@ -118,14 +118,14 @@ Create a new page at a new url
 
 3. Change component name to Example2
 
- */src/example2/index.js*
+ __*/src/example2/index.js*__
  ```javascript
  export default class Example2 extends Component
  ```
 
 4. Give the component a URL and nest it in our App route
 
- */src/routes.js*
+ __*/src/routes.js*__
  ```javascript
  ...
  import Example2 from './example2'
@@ -140,7 +140,7 @@ Create a new page at a new url
 Manage state with reducers and actions
 --------------------------------------
 
-*/src/example2/actions.js*
+__*/src/example2/actions.js*__
 
 Create a click *action type* and *action creator*.
 Action types must be unique strings.
@@ -154,7 +154,7 @@ export const click = () => ({ type: CLICK })
 ```
 
 
-*/src/example2/reducer.js*
+__*/src/example2/reducer.js*__
 
 Create a state reducer that:
 - is initially 0
@@ -171,7 +171,7 @@ export default (state = 0, action) => (
 ```
 
 
-*/src/reducer.js*
+__*/src/reducer.js*__
 
 Add our reducer to the global reducer. Reducers can be composed to form a single state tree.
 
@@ -192,7 +192,7 @@ Assume the global state is like:
 and you want it in your component as:
   `this.props.count`
 
-*/src/example2/index.js*
+__*/src/example2/index.js*__
 
 ```javascript
 import { connect } from 'react-redux'
@@ -211,7 +211,7 @@ export default connect(
 Change the global state from your component
 -------------------------------------------
 
-*/src/example2/index.js*
+__*/src/example2/index.js*__
 
 Connect the component to the action
 
