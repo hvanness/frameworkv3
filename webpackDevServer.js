@@ -9,5 +9,10 @@ new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
   hot: true,
   historyApiFallback: true,
-  host: HOST
-}).listen(PORT, HOST, (err, result) => { console.log( err ? err : `Listening at http://${HOST}:${PORT}/` ) }
+  host: HOST,
+  stats: {
+    colors: true
+  }
+}).listen(PORT, HOST, (err, result) => {
+  console.log( err ? err : `Listening at http://${HOST}:${PORT}/` )
+})

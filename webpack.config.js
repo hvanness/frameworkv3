@@ -8,12 +8,10 @@ var autoprefixer = require('autoprefixer');
 
 module.exports = {
   entry: debug ? [
-    'babel-polyfill',
     'webpack-dev-server/client?http://0.0.0.0:3000', // WebpackDevServer host and port
     'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
     './src/index.js'
   ] : [
-    'babel-polyfill',
     './src/index.js'
   ],
 
@@ -36,7 +34,7 @@ module.exports = {
     loaders: [
       {
         test: /\.js?$/,
-        loaders: debug ? ['react-hot','babel']:['babel'],
+        loaders: ['react-hot', 'babel'],
         include: path.join(__dirname, 'src')
       },
       {
@@ -52,12 +50,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loaders: (debug ? x=>x : x=>ExtractTextPlugin.extract.apply(x))([
-            'style-loader',
-            'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
-            'postcss-loader'
-          ]
-        )
+        loader: debug ? 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader' : ExtractTextPlugin.extract('style-loader','css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader')
       }
     ]
   },
