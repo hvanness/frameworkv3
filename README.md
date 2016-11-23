@@ -103,7 +103,13 @@ About the dependencies
     "eslint": "^3.10.2",
     "eslint-loader": "^1.6.1",
     "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-react": "^6.7.1"
+    "eslint-plugin-react": "^6.7.1",
+```
+
+**Write tests**
+```json
+    "mocha": "3.1.2",
+    "mocha-eslint": "3.0.1"
 ```
 
 
