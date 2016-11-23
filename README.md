@@ -7,17 +7,17 @@ Install
 -------
 
 1. Edit package.json:
-- change "name"
-- change "description"
+ * change "name"
+ * change "description"
 
 2. Download & install dependencies:
  `npm install`
 
 3. Delete examples:
-- `/src/example/`
-- `/src/example2/`
-- */src/routes.js*: `/* examples */ ... /* end examples */`
-- */src/reducer.js*: `/* examples */ ... /* end examples */`
+ - `/src/example/`
+ - `/src/example2/`
+ - */src/routes.js*: `/* examples */ ... /* end examples */`
+ - */src/reducer.js*: `/* examples */ ... /* end examples */`
 
 
 Develop
@@ -29,7 +29,7 @@ Develop
 2. Load in browser:
  `http://localhost:3000`
 
-3. Edit sources in /src
+3. Edit sources in */src*
 
 
 Production Build
@@ -38,9 +38,7 @@ Production Build
 1. Compile bundle.js (and other assets) to /public/static/:
  `npm run build`
 
-2. Host the public/ directory:
-- drag it into netlify or
-- `surge .`
+2. Host the public/ directory (eg. drag it into netlify or `surge .`)
 
 
 
@@ -120,23 +118,23 @@ Create a new page at a new url
 
 3. Change component name to Example2
 
-*/src/example2/index.js*
-```javascript
-export default class Example2 extends Component
-```
+ */src/example2/index.js*
+ ```javascript
+ export default class Example2 extends Component
+ ```
 
 4. Give the component a URL and nest it in our App route
 
-*/src/routes.js*
-```javascript
-...
-import Example2 from './example2'
-
-<Route path="/" component={App}>
-  ...
-  <Route path="/example2" component={Example2}/>
-</Route>
-```
+ */src/routes.js*
+ ```javascript
+ ...
+ import Example2 from './example2'
+ 
+ <Route path="/" component={App}>
+   ...
+   <Route path="/example2" component={Example2}/>
+ </Route>
+ ```
 
 
 Manage state with reducers and actions
