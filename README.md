@@ -7,17 +7,17 @@ Install
 -------
 
 1. Edit package.json:
- + change "name"
- + change "description"
+- change "name"
+- change "description"
 
 2. Download & install dependencies:
  `npm install`
 
 3. Delete examples:
- + `/src/example/`
- + `/src/example2/`
- + */src/routes.js*: `/* examples */ ... /* end examples */`
- + */src/reducer.js*: `/* examples */ ... /* end examples */`
+- `/src/example/`
+- `/src/example2/`
+- */src/routes.js*: `/* examples */ ... /* end examples */`
+- */src/reducer.js*: `/* examples */ ... /* end examples */`
 
 
 Develop
@@ -39,8 +39,8 @@ Production Build
  `npm run build`
 
 2. Host the public/ directory:
- + drag it into netlify or
- + `surge .`
+- drag it into netlify or
+- `surge .`
 
 
 
@@ -147,8 +147,8 @@ Manage state with reducers and actions
 Create a click *action type* and *action creator*.
 Action types must be unique strings.
 Action creators must return either:
- + an action `{type: ACTION_TYPE_CONSTANT, ...}`
- + a function that eventually dispatches actions `(dispatch, getState) => {...}`
+- an action `{type: ACTION_TYPE_CONSTANT, ...}`
+- a function that eventually dispatches actions `(dispatch, getState) => {...}`
 
 ```javascript
 export const CLICK = 'example2/CLICK'
@@ -159,9 +159,9 @@ export const click = () => ({ type: CLICK })
 */src/example2/reducer.js*
 
 Create a state reducer that:
- + is initially 0
- + increments on CLICK actions and
- + stays constant for all other actions
+- is initially 0
+- increments on CLICK actions and
+- stays constant for all other actions
 
 ```javascript
 import { CLICK } from './actions'
