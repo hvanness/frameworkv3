@@ -129,7 +129,7 @@ Create a new page at a new url
  ```javascript
  ...
  import Example2 from './example2'
- 
+
  <Route path="/" component={App}>
    ...
    <Route path="/example2" component={Example2}/>
