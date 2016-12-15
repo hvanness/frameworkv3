@@ -2,17 +2,17 @@ const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const config = require('./webpack.config');
 
-const HOST = 'localhost'
-const PORT = 3000
+const host = config.devServer.host
+const port = config.devServer.port
 new WebpackDevServer(webpack(config), {
   contentBase: config.output.contentBase,
   publicPath: config.output.publicPath,
   hot: true,
   historyApiFallback: true,
-  host: HOST,
+  host: host,
   stats: {
     colors: true
   }
-}).listen(PORT, HOST, (err, result) => {
-  console.log( err ? err : `Listening at http://${HOST}:${PORT}/` )
+}).listen(port, host, (err, result) => {
+  console.log(err ? err : `Listening on ${host}:${port}/` )
 })

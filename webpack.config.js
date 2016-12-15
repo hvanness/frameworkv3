@@ -4,11 +4,14 @@ var path = require('path')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var autoprefixer = require('autoprefixer');
 
-
+const devServer = {
+  host: '0.0.0.0',
+  port: '3000',
+}
 
 module.exports = {
   entry: debug ? [
-    'webpack-dev-server/client?http://0.0.0.0:3000', // WebpackDevServer host and port
+    'webpack-dev-server/client?http://'+devServer.host+':'+devServer.port, // WebpackDevServer host and port
     'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
     './src/index.js'
   ] : [
@@ -57,6 +60,7 @@ module.exports = {
 
   postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],
 
+  devServer: devServer,
 
   resolve: {
     extensions: ['', '.js'],
