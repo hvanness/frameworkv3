@@ -31,6 +31,7 @@
     "extract-text-webpack-plugin": "^3.0.0",
 
     "autoprefixer": "^7.1.2",
+    "normalize.css": "^7.0.0",
 
     "isomorphic-fetch": "2.2.1",
 
@@ -46,16 +47,12 @@
     "react-router": "^4.1.2",
     "react-router-dom": "^4.1.2",
 
-
     "eslint": "^4.3.0",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-react": "^7.1.0",
 
-
     "mocha": "^3.4.2",
-    "mocha-eslint": "^4.1.0",
-
-    "normalize.css": "^7.0.0"
+    "mocha-eslint": "^4.1.0"
   }
 }
