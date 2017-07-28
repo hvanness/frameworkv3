@@ -1,4 +1,4 @@
-export const CLICK = 'example2/CLICK'
+export const CLICK = 'example/CLICK'
 export const click = () => ({
   type: CLICK
 })

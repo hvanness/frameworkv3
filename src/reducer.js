@@ -1,8 +1,4 @@
 import { combineReducers } from 'redux'
+import numberOfClicks from './app/containers/example/reducer'
 
-/* example2 */
-import numberOfClicks from './example2/reducer'
 export default combineReducers({numberOfClicks})
-/* end example2 */
-
-//export default combineReducers({})

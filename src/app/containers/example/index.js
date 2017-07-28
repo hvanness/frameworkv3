@@ -1,20 +1,23 @@
 // import React when using JSX
 import React, { Component } from 'react'
+
 // connect components to redux state and actions
 import { connect } from 'react-redux'
+
 // set the html <title> from our component
 import Helmet from 'react-helmet'
+
 // import any actions passed to connect()
 import { click } from './actions'
 
-// Component name (only used for debugging)
-class Example2 extends Component {
-  // gets rerendered (this is optimized) every time a prop changes
+// Component name used for debugging
+class Example extends Component {
   render() {
+    // gets rerendered (this is optimized) every time a prop changes
+    // this.props has the shape {click: ..., numberOfClicks: ...}
     return (
-      // access this.props is {click: ..., numberOfClicks: ...}
       <div onClick={this.props.click}>
-        <Helmet title="example2"/>
+        <Helmet title="example"/>
         count is {this.props.count}
       </div>
     )
@@ -31,4 +34,4 @@ export default connect(
     count: state.numberOfClicks
   }),
   { click }
-)(Example2)
+)(Example)
