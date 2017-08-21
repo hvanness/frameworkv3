@@ -3,11 +3,6 @@ const path = require("path")
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
 const autoprefixer = require("autoprefixer")
 
-const devServer = {
-  host: "0.0.0.0",
-  port: "3000",
-}
-
 module.exports = function (env) {
   const debug = env !== 'prod'
 
@@ -44,15 +39,21 @@ module.exports = function (env) {
         },
 
         {
-          test: /\.(woff(2)?|png|jpg|gif)(\?[a-z0-9=\.]+)?$/,
-          loader: "url-loader",
-          query: {
-            limit: "10000"
-          }
+          test: /\.(woff(2)?|png|jpg|gif|svg)(\?[a-z0-9=\.]+)?$/,
+          use: [
+            {
+              loader: 'url-loader',
+              options: {
+                limit: '100000',
+              }
+            }
+          ],
+          include: path.join(__dirname, "src")
         },
 
+
         {
-          test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+          test: /\.(ttf|eot|webm|mp4)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
           loader: "file-loader"
         },
 
